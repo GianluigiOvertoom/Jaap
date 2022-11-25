@@ -7,6 +7,8 @@ public class PlayerMovement : MonoBehaviour
 {
     private InputMaster inputMaster;
     private Rigidbody2D rb;
+    private Animator anim;
+    private Vector2 moveInput;
 
     [SerializeField]
     private float speed = 10f; 
@@ -16,6 +18,13 @@ public class PlayerMovement : MonoBehaviour
     {
         inputMaster = new InputMaster();
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
+    }
+
+    private void Update()
+    {
+        anim.SetFloat("MovementX", moveInput.x);
+        anim.SetFloat("MovementY", moveInput.y);
     }
 
     private void OnEnable()
