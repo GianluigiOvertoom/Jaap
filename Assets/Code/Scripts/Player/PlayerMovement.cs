@@ -18,13 +18,13 @@ public class PlayerMovement : MonoBehaviour
     {
         inputMaster = new InputMaster();
         rb = GetComponent<Rigidbody2D>();
-        anim = GetComponent<Animator>();
+        anim = GetComponentInChildren<Animator>();
     }
 
     private void Update()
     {
-        anim.SetFloat("MovementX", moveInput.x);
-        anim.SetFloat("MovementY", moveInput.y);
+        /*anim.SetFloat("MovementX", moveInput.x);
+        anim.SetFloat("MovementY", moveInput.y);*/
     }
 
     private void OnEnable()
@@ -41,5 +41,8 @@ public class PlayerMovement : MonoBehaviour
     {
         Vector2 moveInput = inputMaster.PlayerInput.Movement.ReadValue<Vector2>();
         rb.velocity = moveInput * speed;
+
+        anim.SetFloat("MovementX", moveInput.x);
+        anim.SetFloat("MovementY", moveInput.y);
     }
 }
