@@ -38,5 +38,11 @@ public class PlayerMovement : MonoBehaviour
 
         anim.SetFloat("MovementX", moveInput.x);
         anim.SetFloat("MovementY", moveInput.y);
+
+        if (moveInput.x == 1 || moveInput.x == -1 || moveInput.y == 1 || moveInput.y == -1)
+        {
+            anim.SetFloat("LastMovementX", moveInput.x);
+            anim.SetFloat("LastMovementY", moveInput.y);
+        }
     }
 }
