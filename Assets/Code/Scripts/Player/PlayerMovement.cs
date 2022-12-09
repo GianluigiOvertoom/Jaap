@@ -21,12 +21,6 @@ public class PlayerMovement : MonoBehaviour
         anim = GetComponentInChildren<Animator>();
     }
 
-    private void Update()
-    {
-        /*anim.SetFloat("MovementX", moveInput.x);
-        anim.SetFloat("MovementY", moveInput.y);*/
-    }
-
     private void OnEnable()
     {
         inputMaster.Enable();
