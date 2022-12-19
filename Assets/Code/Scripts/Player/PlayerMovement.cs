@@ -13,7 +13,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private float speed = 10f; 
 
-
     private void Awake()
     {
         inputMaster = new InputMaster();
